@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaTone • Mounjaro Coaching | Prevent Sag, Build Strength, Live Longer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --primary: #0F766E;
+            --accent: #7C3AED;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .section-header {
+            font-size: 2.75rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .nav-active {
+            color: #0F766E;
+            font-weight: 600;
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .program-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .pillar-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .nav-scrolled {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+        }
+
+        .mounjaro-gradient {
+            background: linear-gradient(135deg, #0F766E 0%, #134E4B 100%);
+        }
+
+        .accent-gradient {
+            background: linear-gradient(90deg, #7C3AED, #0F766E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-value {
+            font-size: 2.25rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .fitness-bg {
+            background-image: linear-gradient(rgba(15, 118, 110, 0.75), rgba(15, 118, 110, 0.65)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=2070&amp;q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .skin-bg {
+            background-image: linear-gradient(rgba(124, 58, 237, 0.08), rgba(15, 118, 110, 0.08)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=2070&amp;q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-open .accordion-content {
+            max-height: 200px;
+        }
+
+        .result-stat {
+            transition: all 0.4s ease;
+        }
+    </style>
+</head>
+<body class="smooth-scroll bg-zinc-50 text-zinc-900">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="bg-white border-b border-zinc-200 sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-teal-700 rounded-2xl flex items-center justify-center shadow-inner">
+                        <span class="text-white text-3xl font-bold tracking-tighter">VT</span>
+                    </div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter">VitaTone</span>
+                        <span class="text-xs font-medium text-teal-700 block -mt-1">MOUNJARO COACHING</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#about" class="hover:text-teal-700 transition-colors">About</a>
+                    <a href="#programs" class="hover:text-teal-700 transition-colors">Programs</a>
+                    <a href="#method" class="hover:text-teal-700 transition-colors">Our Method</a>
+                    <a href="#pharmacies" class="hover:text-teal-700 transition-colors">For Pharmacies</a>
+                    <a href="#results" class="hover:text-teal-700 transition-colors">Results</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <button onclick="showBookingModal()"
+                            class="hidden md:block px-6 py-2.5 text-sm font-semibold rounded-2xl border border-teal-700 text-teal-700 hover:bg-teal-50 transition-colors">
+                        Book Free Consult
+                    </button>
+                    
+                    <button onclick="showBookingModal()"
+                            class="px-6 py-2.5 bg-teal-700 hover:bg-teal-800 transition-all text-white text-sm font-semibold rounded-2xl flex items-center gap-x-2 shadow-sm">
+                        <span>Get Started</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </button>
+
+                    <!-- Mobile Menu -->
+                    <button class="md:hidden w-10 h-10 flex items-center justify-center text-zinc-700" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="fitness-bg h-screen flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-12">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6 shadow-sm border border-white/60">
+                    <div class="flex -space-x-1">
+                        <div class="w-5 h-5 bg-emerald-400 rounded-full border border-white"></div>
+                        <div class="w-5 h-5 bg-violet-400 rounded-full border border-white"></div>
+                        <div class="w-5 h-5 bg-amber-400 rounded-full border border-white"></div>
+                    </div>
+                    <span class="text-xs font-semibold tracking-wider text-teal-800">NOW ACCEPTING NEW CLIENTS FOR 2026</span>
+                </div>
+                
+                <h1 class="text-white text-7xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
+                    Mounjaro.<br>
+                    <span class="text-emerald-300">Without the sag.</span>
+                </h1>
+                
+                <p class="max-w-md text-white/90 text-xl mb-10 leading-tight">
+                    Expert coaching that preserves muscle, tightens skin, and builds lasting vitality for pharmacy clients on Mounjaro.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="showBookingModal()" 
+                            class="group px-10 py-4 bg-white text-teal-800 font-semibold text-lg rounded-3xl flex items-center justify-center gap-x-3 hover:bg-zinc-100 transition-all shadow-xl active:scale-[0.985]">
+                        <span>Start My Transformation</span>
+                        <i class="fas fa-play text-sm group-active:scale-110 transition-transform"></i>
+                    </button>
+                    
+                    <button onclick="document.getElementById('method').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 border border-white/70 hover:bg-white/10 text-white font-medium rounded-3xl flex items-center justify-center gap-x-2 transition-all text-base">
+                        <i class="fas fa-play-circle mr-1"></i> 
+                        <span>Watch 1:42 video</span>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-x-6 mt-10 text-white/80 text-sm">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-emerald-300 mr-2"></i>
+                        <span>500+ Mounjaro clients transformed</span>
+                    </div>
+                    <div class="hidden sm:block w-px h-3 bg-white/30"></div>
+                    <div>Featured in Pharmacy Today</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Trust badge floating -->
+        <div class="absolute bottom-8 right-8 hidden lg:block">
+            <div class="glass px-5 py-3 rounded-3xl border border-white/70 shadow-xl flex items-center gap-x-3">
+                <div>
+                    <div class="text-xs text-zinc-500">AVERAGE CLIENT RESULT</div>
+                    <div class="font-semibold text-teal-700">+6.4 lbs lean mass</div>
+                    <div class="text-xs text-emerald-600">-41% body fat</div>
+                </div>
+                <div class="text-right">
+                    <div class="text-[10px] text-zinc-400">in 12 weeks</div>
+                    <div class="text-emerald-600 font-mono text-xs">N=342</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="border-b border-zinc-200 bg-white py-5">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-75">
+                <div class="flex items-center gap-x-2 text-xs font-medium text-zinc-500">
+                    <span>PARTNERED WITH</span>
+                </div>
+                <div class="flex items-center gap-x-8 grayscale opacity-80">
+                    <div class="font-semibold text-lg tracking-tighter">CVS Health</div>
+                    <div class="font-semibold text-lg tracking-tighter">Walgreens</div>
+                    <div class="font-semibold text-lg tracking-tighter">Rite Aid</div>
+                    <div class="font-semibold text-lg tracking-tighter">Independent Pharmacies</div>
+                </div>
+                <div class="text-xs px-4 py-1 bg-zinc-100 rounded-full text-zinc-500 font-medium">50+ pharmacy partners nationwide</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROBLEM / STATS SECTION -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-5">
+                <div class="sticky top-24">
+                    <div class="uppercase tracking-[3px] text-xs font-semibold text-teal-700 mb-3">THE REALITY CHECK</div>
+                    <h2 class="section-header leading-none tracking-tighter">Mounjaro works.<br>But your body<br>needs help too.</h2>
+                    
+                    <div class="mt-8 space-y-4 text-zinc-600">
+                        <div class="flex gap-4">
+                            <div class="mt-1"><i class="fas fa-exclamation-triangle text-amber-500"></i></div>
+                            <div>
+                                <div class="font-semibold">Up to 40% of weight lost on GLP-1s is lean muscle</div>
+                                <div class="text-sm">— leading to slower metabolism and "skinny fat" look</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1"><i class="fas fa-exclamation-triangle text-amber-500"></i></div>
+                            <div>
+                                <div class="font-semibold">Loose, sagging skin is extremely common</div>
+                                <div class="text-sm">after rapid 50–100+ lb weight loss</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="bg-white border border-zinc-200 p-7 rounded-3xl">
+                        <div class="text-5xl font-bold text-zinc-900">42<span class="text-3xl align-super">%</span></div>
+                        <div class="text-sm text-zinc-500 mt-1">of Mounjaro users report<br>noticeable muscle loss</div>
+                        <div class="mt-6 text-xs px-3 py-1 bg-amber-50 text-amber-700 inline-flex rounded-2xl items-center">
+                            <i class="fas fa-chart-line mr-1.5"></i>
+                            <span class="font-medium">NEJM 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-zinc-200 p-7 rounded-3xl">
+                        <div class="text-5xl font-bold text-zinc-900">67<span class="text-3xl align-super">%</span></div>
+                        <div class="text-sm text-zinc-500 mt-1">experience loose skin<br>after major weight loss</div>
+                        <div class="mt-6 text-xs px-3 py-1 bg-red-50 text-red-700 inline-flex rounded-2xl items-center">
+                            <span class="font-medium">JAMA Dermatology</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-zinc-200 p-7 rounded-3xl col-span-2 md:col-span-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-5xl font-bold text-zinc-900">3.2×</div>
+                            <div class="text-sm text-zinc-500">higher risk of sarcopenia<br>without resistance training</div>
+                        </div>
+                        <div class="text-xs text-teal-700 font-semibold mt-auto pt-4">Our clients: 0 cases</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT / FOUNDER -->
+    <div id="about" class="max-w-screen-2xl mx-auto px-8 py-16 border-t border-zinc-200 bg-white">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="text-teal-700 font-semibold tracking-widest text-xs mb-3">MEET YOUR COACH</div>
+                <h2 class="section-header tracking-tighter">Dr. Lena Voss, PhD, CSCS</h2>
+                <p class="text-xl text-zinc-600 mt-4 pr-8">Former clinical researcher at a leading GLP-1 trial site turned elite performance coach.</p>
+                
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <div class="px-4 py-1.5 bg-zinc-100 rounded-2xl text-xs flex items-center gap-x-2">
+                        <i class="fas fa-graduation-cap text-teal-600"></i>
+                        <span>PhD Exercise Physiology • Stanford</span>
+                    </div>
+                    <div class="px-4 py-1.5 bg-zinc-100 rounded-2xl text-xs flex items-center gap-x-2">
+                        <i class="fas fa-medal text-teal-600"></i>
+                        <span>10+ years GLP-1 specialization</span>
+                    </div>
+                    <div class="px-4 py-1.5 bg-zinc-100 rounded-2xl text-xs flex items-center gap-x-2">
+                        <i class="fas fa-users text-teal-600"></i>
+                        <span>1,200+ Mounjaro clients coached</span>
+                    </div>
+                </div>
+                
+                <div class="mt-8 border-l-4 border-teal-600 pl-6">
+                    <p class="italic text-zinc-600">"I watched too many patients lose the weight but lose their strength, their confidence, and their health. I built VitaTone to fix that."</p>
+                    <div class="text-sm text-zinc-500 mt-3">— Lena Voss, Founder</div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-zinc-100">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" 
+                         class="w-full h-full object-cover" alt="Dr. Lena Voss - Founder of VitaTone Coaching">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white shadow-xl border border-zinc-100 p-5 rounded-2xl max-w-[220px]">
+                    <div class="flex items-center gap-x-3">
+                        <div>
+                            <div class="font-semibold">Featured expert on</div>
+                            <div class="text-xs text-zinc-500">Mounjaro &amp; Muscle Preservation</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mt-3">
+                        <div class="text-xs px-2.5 py-px bg-zinc-900 text-white rounded">TEDx</div>
+                        <div class="text-xs px-2.5 py-px bg-zinc-900 text-white rounded">Men's Health</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OUR METHOD -->
+    <div id="method" class="max-w-screen-2xl mx-auto px-8 py-20 bg-zinc-900 text-white">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+            <div class="text-emerald-400 text-xs tracking-[3px] font-semibold">THE MOUNJARO MASTERY METHOD™</div>
+            <h2 class="section-header text-white tracking-tighter mt-3">Four pillars.<br>Zero compromise.</h2>
+            <p class="text-zinc-400 mt-4">Every plan is built around your unique Mounjaro protocol, lab work, and body composition goals.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-6">
+            <!-- Pillar 1 -->
+            <div class="pillar-card bg-zinc-800 border border-zinc-700 p-7 rounded-3xl">
+                <div class="w-12 h-12 bg-teal-900/60 flex items-center justify-center rounded-2xl mb-6">
+                    <i class="fas fa-dumbbell text-teal-400 text-2xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl">Resistance First</h3>
+                <p class="text-sm mt-3 text-zinc-400">Progressive overload training 4–5× weekly. We prioritize compound lifts and time-under-tension protocols proven to counteract GLP-1 induced muscle catabolism.</p>
+                <div class="text-xs text-teal-400 mt-6 font-medium">+8.2 lbs average lean mass gain</div>
+            </div>
+            
+            <!-- Pillar 2 -->
+            <div class="pillar-card bg-zinc-800 border border-zinc-700 p-7 rounded-3xl">
+                <div class="w-12 h-12 bg-violet-900/60 flex items-center justify-center rounded-2xl mb-6">
+                    <i class="fas fa-drumstick-bite text-violet-400 text-2xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl">Protein &amp; Collagen</h3>
+                <p class="text-sm mt-3 text-zinc-400">1.8–2.2g protein per kg bodyweight + targeted collagen peptides. Meal timing optimized around your Mounjaro injection schedule to maximize absorption.</p>
+                <div class="text-xs text-violet-400 mt-6 font-medium">92% clients hit protein targets</div>
+            </div>
+            
+            <!-- Pillar 3 -->
+            <div class="pillar-card bg-zinc-800 border border-zinc-700 p-7 rounded-3xl">
+                <div class="w-12 h-12 bg-amber-900/60 flex items-center justify-center rounded-2xl mb-6">
+                    <i class="fas fa-spa text-amber-400 text-2xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl">Skin Elasticity Protocol</h3>
+                <p class="text-sm mt-3 text-zinc-400">Medical-grade collagen, vitamin C, hyaluronic acid + targeted dry brushing and lymphatic work. Slow, controlled weight loss phases built into every plan.</p>
+                <div class="text-xs text-amber-400 mt-6 font-medium">87% report tighter skin</div>
+            </div>
+            
+            <!-- Pillar 4 -->
+            <div class="pillar-card bg-zinc-800 border border-zinc-700 p-7 rounded-3xl">
+                <div class="w-12 h-12 bg-emerald-900/60 flex items-center justify-center rounded-2xl mb-6">
+                    <i class="fas fa-heart-pulse text-emerald-400 text-2xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl">Longevity Metrics</h3>
+                <p class="text-sm mt-3 text-zinc-400">We track VO₂ max, HRV, inflammation markers, and grip strength. The goal isn't just looking good — it's adding healthy years to your life.</p>
+                <div class="text-xs text-emerald-400 mt-6 font-medium">Average +18% VO₂ max</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROGRAMS -->
+    <div id="programs" class="max-w-screen-2xl mx-auto px-8 py-20">
+        <div class="text-center mb-12">
+            <div class="text-teal-700 uppercase text-xs tracking-[2.5px]">CHOOSE YOUR PATH</div>
+            <h2 class="section-header tracking-tight mt-2">Coaching programs built<br>for Mounjaro users</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+            <!-- Program 1 -->
+            <div class="program-card bg-white border border-zinc-200 rounded-3xl p-8 flex flex-col">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-xs tracking-widest font-semibold text-zinc-400">STARTER</div>
+                            <div class="text-3xl font-bold mt-1">Foundation</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs text-zinc-400">8 WEEKS</div>
+                            <div class="text-3xl font-bold text-teal-700">$497</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 space-y-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Custom 8-week training + nutrition plan</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Weekly progress check-ins via app</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Mounjaro-specific macro calculator</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Private community access</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="selectProgram('Foundation', 497)" 
+                        class="mt-auto w-full py-4 text-sm font-semibold border border-teal-700 text-teal-700 hover:bg-teal-50 rounded-2xl transition-colors">
+                    Start Foundation Program
+                </button>
+            </div>
+            
+            <!-- Program 2 - Most Popular -->
+            <div class="program-card bg-white border-2 border-teal-700 rounded-3xl p-8 flex flex-col relative shadow-xl">
+                <div class="absolute -top-3 right-6 bg-teal-700 text-white text-xs px-5 py-px rounded-full font-semibold tracking-wider">MOST POPULAR</div>
+                
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-xs tracking-widest font-semibold text-teal-700">TRANSFORMATION</div>
+                            <div class="text-3xl font-bold mt-1">Signature</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs text-zinc-400">12 WEEKS</div>
+                            <div class="text-3xl font-bold text-teal-700">$997</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 space-y-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Everything in Foundation +</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Bi-weekly 45-min 1:1 video coaching</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Personalized meal timing around injections</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Skin elasticity &amp; recovery toolkit</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>DEXA scan analysis + adjustments</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="selectProgram('Signature', 997)" 
+                        class="mt-auto w-full py-4 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold rounded-2xl transition-all">
+                    Enroll in Signature Program
+                </button>
+            </div>
+            
+            <!-- Program 3 -->
+            <div class="program-card bg-white border border-zinc-200 rounded-3xl p-8 flex flex-col">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-xs tracking-widest font-semibold text-zinc-400">PREMIUM</div>
+                            <div class="text-3xl font-bold mt-1">Longevity Elite</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs text-zinc-400">6 MONTHS</div>
+                            <div class="text-3xl font-bold text-teal-700">$2,497</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 space-y-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Unlimited 1:1 coaching &amp; messaging</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Quarterly lab review + physician liaison</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>In-home or gym training sessions (4x)</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Full longevity panel + VO₂ testing</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-500 mt-1"></i>
+                            <span>Private retreat invitation (annual)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="selectProgram('Longevity Elite', 2497)" 
+                        class="mt-auto w-full py-4 text-sm font-semibold border border-zinc-900 hover:bg-zinc-900 hover:text-white rounded-2xl transition-colors">
+                    Join Longevity Elite
+                </button>
+            </div>
+            
+        </div>
+        
+        <div class="text-center mt-10 text-xs text-zinc-500">All programs include lifetime access to our Mounjaro-specific resource library and app</div>
+    </div>
+
+    <!-- RESULTS / TESTIMONIALS -->
+    <div id="results" class="bg-white border-t border-zinc-200 py-20">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+                <div>
+                    <div class="text-teal-700 text-xs tracking-[3px]">REAL RESULTS FROM REAL CLIENTS</div>
+                    <h2 class="section-header tracking-tighter">They kept the muscle.<br>They lost the fat.<br>They glow.</h2>
+                </div>
+                <a href="#" class="mt-4 md:mt-0 inline-flex items-center text-sm font-medium text-teal-700 hover:text-teal-800">
+                    View full case studies <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-zinc-50 border border-zinc-100 p-8 rounded-3xl">
+                    <div class="flex items-center gap-x-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=150&amp;h=150" class="w-14 h-14 rounded-2xl object-cover" alt="Sarah M.">
+                        <div>
+                            <div class="font-semibold">Sarah M., 47</div>
+                            <div class="text-xs text-zinc-500">Lost 68 lbs on Mounjaro • 14 weeks with VitaTone</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-sm leading-relaxed">"I was terrified of looking 'deflated' after losing so much weight. Lena’s program gave me visible abs and arms I never had in my 20s. My skin is tighter than it was before I started Mounjaro. My pharmacist actually asked what I was doing differently."</div>
+                    
+                    <div class="mt-6 flex items-center justify-between text-xs">
+                        <div class="flex items-center gap-x-px">
+                            <span class="font-mono text-emerald-600 font-bold">-68 lbs</span>
+                            <span class="text-zinc-400 mx-1">•</span>
+                            <span class="font-mono text-emerald-600 font-bold">+9.1 lbs muscle</span>
+                        </div>
+                        <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-2xl">No loose skin</div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-zinc-50 border border-zinc-100 p-8 rounded-3xl">
+                    <div class="flex items-center gap-x-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=150&amp;h=150" class="w-14 h-14 rounded-2xl object-cover" alt="Marcus T.">
+                        <div>
+                            <div class="font-semibold">Marcus T., 54</div>
+                            <div class="text-xs text-zinc-500">Type 2 diabetic • Lost 52 lbs • 5 months</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-sm leading-relaxed">"My A1C dropped from 8.4 to 5.7. I gained visible muscle in my chest and shoulders while dropping body fat. My doctor at the pharmacy said my labs are the best he’s seen in any Mounjaro patient. I feel 15 years younger."</div>
+                    
+                    <div class="mt-6 flex items-center justify-between text-xs">
+                        <div>
+                            <span class="font-mono text-emerald-600 font-bold">-52 lbs</span> 
+                            <span class="text-zinc-400 mx-1">•</span> 
+                            <span class="font-mono text-emerald-600 font-bold">+11 lbs lean mass</span>
+                        </div>
+                        <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-2xl">A1C 5.7</div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-zinc-50 border border-zinc-100 p-8 rounded-3xl">
+                    <div class="flex items-center gap-x-4">
+                        <img src="https://images.unsplash.com/photo-1580489944761-09f4c4f2e2f4?auto=format&amp;fit=crop&amp;w=150&amp;h=150" class="w-14 h-14 rounded-2xl object-cover" alt="Priya K.">
+                        <div>
+                            <div class="font-semibold">Priya K., 39</div>
+                            <div class="text-xs text-zinc-500">Lost 41 lbs • Now training for her first half marathon</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-sm leading-relaxed">"I was worried about saggy arms and belly after my 40 lb loss. The collagen protocol and specific upper body work completely changed that. My skin looks better than before I lost weight. I’m stronger, faster, and my energy is through the roof."</div>
+                    
+                    <div class="mt-6 flex items-center justify-between text-xs">
+                        <div class="font-mono text-emerald-600 font-bold">-41 lbs • +6.4 lbs muscle</div>
+                        <div class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-2xl">Finished 5K PR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHARMACY PARTNERS SECTION -->
+    <div id="pharmacies" class="max-w-screen-2xl mx-auto px-8 py-20 bg-gradient-to-br from-zinc-900 to-teal-900 text-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-12 gap-x-12 items-center">
+                <div class="md:col-span-7">
+                    <div class="uppercase text-xs tracking-[3px] text-emerald-400 mb-3">FOR PHARMACY PARTNERS</div>
+                    <h2 class="text-5xl font-bold tracking-tighter leading-none">Give your Mounjaro patients<br>the complete care they deserve.</h2>
+                    
+                    <p class="mt-6 text-lg text-white/80">We partner with forward-thinking pharmacies to offer seamless, white-label coaching that dramatically improves patient outcomes and retention.</p>
+                    
+                    <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                        <div class="flex gap-3">
+                            <i class="fas fa-handshake text-emerald-400 text-xl mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Referral Revenue Share</div>
+                                <div class="text-xs text-white/70">Up to 25% of program fees</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fas fa-chart-line text-emerald-400 text-xl mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Better Adherence</div>
+                                <div class="text-xs text-white/70">Patients stay on therapy longer</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fas fa-user-md text-emerald-400 text-xl mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Clinical Collaboration</div>
+                                <div class="text-xs text-white/70">Monthly outcome reports for your team</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-5 mt-12 md:mt-0">
+                    <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl">
+                        <div class="text-sm font-semibold mb-6">What our pharmacy partners say:</div>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <div class="italic text-sm">"VitaTone has become our secret weapon. Our Mounjaro patients who enroll have 3x better retention and significantly fewer side effects."</div>
+                                <div class="text-xs mt-3 text-emerald-400">— Dr. Angela Ruiz, PharmD • Director, Specialty Pharmacy</div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="showPharmacyModal()" 
+                                class="mt-8 w-full bg-white text-teal-900 py-4 font-semibold rounded-2xl text-sm hover:bg-emerald-50 transition-colors flex items-center justify-center gap-x-2">
+                            <span>Request Partnership Kit</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-20">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="text-xs tracking-[2px] text-teal-700 font-semibold">STILL HAVE QUESTIONS?</div>
+                <h2 class="section-header tracking-tighter">Frequently asked questions</h2>
+            </div>
+            
+            <div class="space-y-3">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item border border-zinc-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center px-8 py-5 text-left font-medium">
+                        <span>Is this safe while I’m on Mounjaro / tirzepatide?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6 text-sm text-zinc-600">
+                        Absolutely. All programs are designed in collaboration with endocrinologists and specifically account for the unique metabolic and gastrointestinal effects of GLP-1 receptor agonists. We adjust training volume and nutrition timing around your injection days.
+                    </div>
+                </div>
+                
+                <div class="accordion-item border border-zinc-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center px-8 py-5 text-left font-medium">
+                        <span>How quickly will I see results?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6 text-sm text-zinc-600">
+                        Most clients notice improved energy and strength within 2–3 weeks. Visible body recomposition (muscle definition + skin tightening) typically begins around week 6–8. Full transformation results are seen at 12–16 weeks.
+                    </div>
+                </div>
+                
+                <div class="accordion-item border border-zinc-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center px-8 py-5 text-left font-medium">
+                        <span>Do I need a gym membership?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6 text-sm text-zinc-600">
+                        No. We provide effective home-based programs using minimal equipment (dumbbells or resistance bands). Many clients also train in commercial gyms — we customize based on your access and preference.
+                    </div>
+                </div>
+                
+                <div class="accordion-item border border-zinc-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center px-8 py-5 text-left font-medium">
+                        <span>Can my pharmacy refer me and get credit?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6 text-sm text-zinc-600">
+                        Yes! When you enroll, simply mention your pharmacy or use their unique referral code. We’ll send them a thank-you report and they receive a revenue share on your program.
+                    </div>
+                </div>
+                
+                <div class="accordion-item border border-zinc-200 rounded-2xl overflow-hidden bg-white">
+                    <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center px-8 py-5 text-left font-medium">
+                        <span>What if I’m already working with a trainer?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6 text-sm text-zinc-600">
+                        We love collaboration. Many clients work with us as their Mounjaro-specialized nutrition &amp; longevity coach while keeping their current strength coach. We’re happy to coordinate care.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="max-w-screen-2xl mx-auto px-8 pb-20">
+        <div class="mounjaro-gradient rounded-[3rem] px-12 py-16 text-center text-white">
+            <div class="max-w-xl mx-auto">
+                <h2 class="text-5xl font-bold tracking-tighter">Ready to protect your results<br>and build the body you deserve?</h2>
+                <p class="mt-5 text-xl text-white/80">Book your complimentary 30-minute strategy call with our team today.</p>
+                
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="showBookingModal()" 
+                            class="px-12 py-4 bg-white text-teal-800 font-bold text-lg rounded-3xl hover:bg-zinc-100 active:scale-[0.985] transition-all shadow-xl">
+                        Book My Free Strategy Call
+                    </button>
+                    <button onclick="document.getElementById('programs').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 border border-white/50 text-white font-medium rounded-3xl flex items-center justify-center gap-x-2 hover:bg-white/10 transition-all">
+                        See All Programs
+                    </button>
+                </div>
+                
+                <div class="mt-8 text-xs text-white/60">No obligation. 100% confidential. Spots are limited each month.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 text-zinc-400 border-t border-zinc-900">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-8">
+            <div class="grid md:grid-cols-12 gap-y-12">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-9 h-9 bg-teal-700 rounded-2xl flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold tracking-tighter">VT</span>
+                        </div>
+                        <span class="text-white text-2xl font-bold tracking-tighter">VitaTone</span>
+                    </div>
+                    <div class="mt-4 text-sm max-w-xs">Specialized personal training and online coaching for Mounjaro and GLP-1 patients focused on muscle preservation, skin health, and longevity.</div>
+                    
+                    <div class="mt-8 flex gap-x-5 text-lg">
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <div class="text-xs tracking-widest font-semibold text-white mb-5">EXPLORE</div>
+                    <div class="space-y-2.5 text-sm">
+                        <a href="#method" class="block hover:text-white transition-colors">Our Method</a>
+                        <a href="#programs" class="block hover:text-white transition-colors">Coaching Programs</a>
+                        <a href="#results" class="block hover:text-white transition-colors">Client Results</a>
+                        <a href="#" class="block hover:text-white transition-colors">Free Resources</a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <div class="text-xs tracking-widest font-semibold text-white mb-5">COMPANY</div>
+                    <div class="space-y-2.5 text-sm">
+                        <a href="#about" class="block hover:text-white transition-colors">About Dr. Voss</a>
+                        <a href="#" class="block hover:text-white transition-colors">Clinical Advisory Board</a>
+                        <a href="#" class="block hover:text-white transition-colors">For Pharmacies</a>
+                        <a href="#" class="block hover:text-white transition-colors">Press &amp; Media</a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <div class="text-xs tracking-widest font-semibold text-white mb-5">LEGAL</div>
+                    <div class="space-y-2.5 text-sm">
+                        <a href="#" class="block hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="block hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="block hover:text-white transition-colors">HIPAA Notice</a>
+                    </div>
+                    
+                    <div class="mt-8 text-xs">© 2026 VitaTone Coaching<br>All rights reserved.</div>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-zinc-800 text-xs flex flex-col md:flex-row md:items-center md:justify-between gap-y-3 text-zinc-500">
+                <div>This website is for informational purposes only and does not constitute medical advice. Always consult your prescribing physician before starting any new exercise or nutrition program while on Mounjaro.</div>
+                <div class="font-mono">Made with ❤️ for pharmacy clients everywhere</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOOKING MODAL -->
+    <div id="booking-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
+        <div onclick="event.target.id === 'booking-modal' && hideBookingModal()" class="absolute inset-0"></div>
+        
+        <div class="relative bg-white w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl">
+            <!-- Modal Header -->
+            <div class="px-8 pt-8 pb-6 border-b flex items-center justify-between bg-zinc-50">
+                <div>
+                    <div class="font-bold text-2xl">Book Your Strategy Call</div>
+                    <div class="text-sm text-zinc-500">30 minutes • Free • No pressure</div>
+                </div>
+                <button onclick="hideBookingModal()" class="text-zinc-400 hover:text-zinc-600 text-2xl leading-none">×</button>
+            </div>
+            
+            <div class="p-8">
+                <form id="booking-form" onsubmit="submitBookingForm(event)">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-500 mb-1.5">FIRST NAME</label>
+                            <input type="text" id="first-name" required class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-teal-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-500 mb-1.5">LAST NAME</label>
+                            <input type="text" id="last-name" required class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-teal-600">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="block text-xs font-semibold text-zinc-500 mb-1.5">EMAIL ADDRESS</label>
+                        <input type="email" id="email" required class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-teal-600">
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="block text-xs font-semibold text-zinc-500 mb-1.5">PHONE NUMBER</label>
+                        <input type="tel" id="phone" class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-teal-600" placeholder="(555) 123-4567">
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="block text-xs font-semibold text-zinc-500 mb-1.5">WHICH PROGRAM INTERESTS YOU?</label>
+                        <select id="program-interest" class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-teal-600">
+                            <option value="">I'm not sure yet</option>
+                            <option value="Foundation">Foundation ($497)</option>
+                            <option value="Signature">Signature ($997) - Most Popular</option>
+                            <option value="Longevity Elite">Longevity Elite ($2,497)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="block text-xs font-semibold text-zinc-500 mb-1.5">REFERRED BY YOUR PHARMACY? (OPTIONAL)</label>
+                        <input type="text" id="pharmacy-ref" class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-teal-600" placeholder="Pharmacy name or code">
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button type="submit" 
+                                class="w-full bg-teal-700 hover:bg-teal-800 transition-colors text-white font-semibold py-4 rounded-2xl text-sm">
+                            SECURE MY SPOT — FREE CONSULTATION
+                        </button>
+                    </div>
+                    
+                    <div class="text-center text-xs text-zinc-400 mt-4">We'll send a calendar link within 5 minutes</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pharmacy Partnership Modal -->
+    <div id="pharmacy-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
+        <div onclick="event.target.id === 'pharmacy-modal' && hidePharmacyModal()" class="absolute inset-0"></div>
+        
+        <div class="relative bg-white w-full max-w-md rounded-3xl overflow-hidden shadow-2xl">
+            <div class="px-8 pt-8 pb-6 border-b">
+                <div class="font-bold text-2xl">Request Partnership Information</div>
+                <div class="text-sm text-zinc-500">We'll send you our full partnership deck within 24 hours</div>
+            </div>
+            
+            <div class="p-8">
+                <form id="pharmacy-form" onsubmit="submitPharmacyForm(event)">
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-500 mb-1.5">PHARMACY / CLINIC NAME</label>
+                        <input type="text" required class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm">
+                    </div>
+                    
+                    <div class="mt-4 grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-500 mb-1.5">YOUR NAME</label>
+                            <input type="text" required class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-500 mb-1.5">TITLE</label>
+                            <input type="text" required class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="block text-xs font-semibold text-zinc-500 mb-1.5">WORK EMAIL</label>
+                        <input type="email" required class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm">
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="block text-xs font-semibold text-zinc-500 mb-1.5">NUMBER OF MOUNJARO PATIENTS / MONTH</label>
+                        <select class="w-full border border-zinc-300 rounded-2xl px-5 py-3 text-sm">
+                            <option>1–10</option>
+                            <option>11–30</option>
+                            <option>31–75</option>
+                            <option>75+</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="mt-6 w-full py-4 bg-teal-700 hover:bg-teal-800 transition-colors text-white font-semibold text-sm rounded-2xl">
+                        SEND ME THE PARTNERSHIP KIT
+                    </button>
+                    
+                    <div class="text-center mt-4 text-xs text-zinc-400">Your information is kept strictly confidential</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#7C3AED');
+        }
+        
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 80) {
+                navbar.classList.add('nav-scrolled', 'shadow-sm');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'shadow-sm');
+            }
+        });
+        
+        // Mobile menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                const menu = document.createElement('div');
+                menu.className = 'fixed inset-0 bg-black/90 z-[200] md:hidden flex flex-col';
+                menu.innerHTML = `
+                    <div class="p-6 flex justify-between items-center border-b border-white/20">
+                        <div class="flex items-center gap-x-3">
+                            <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center">
+                                <span class="text-teal-700 text-2xl font-bold tracking-tighter">VT</span>
+                            </div>
+                            <span class="text-white text-2xl font-bold tracking-tighter">VitaTone</span>
+                        </div>
+                        <button class="text-white text-3xl">×</button>
+                    </div>
+                    <div class="p-6 flex flex-col text-white text-xl gap-y-6 font-medium">
+                        <a href="#about" class="hover:text-emerald-400">About</a>
+                        <a href="#programs" class="hover:text-emerald-400">Programs</a>
+                        <a href="#method" class="hover:text-emerald-400">Our Method</a>
+                        <a href="#pharmacies" class="hover:text-emerald-400">For Pharmacies</a>
+                        <a href="#results" class="hover:text-emerald-400">Results</a>
+                    </div>
+                    <div class="mt-auto p-6">
+                        <button onclick="showBookingModal(); document.querySelector('.fixed.inset-0.bg-black\\/90').remove();" 
+                                class="w-full py-4 bg-emerald-500 text-white font-semibold rounded-2xl">
+                            Book Free Consult
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(menu);
+                
+                menu.querySelector('button').onclick = () => menu.remove();
+                
+                // Close on link click
+                menu.querySelectorAll('a').forEach(link => {
+                    link.onclick = () => menu.remove();
+                });
+            });
+        }
+        
+        // Accordion
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const icon = element.querySelector('i');
+            
+            if (item.classList.contains('accordion-open')) {
+                item.classList.remove('accordion-open');
+                content.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all others
+                document.querySelectorAll('.accordion-item').forEach(el => {
+                    el.classList.remove('accordion-open');
+                    const c = el.querySelector('.accordion-content');
+                    if (c) c.style.maxHeight = '0';
+                    const i = el.querySelector('i');
+                    if (i) i.style.transform = 'rotate(0deg)';
+                });
+                
+                item.classList.add('accordion-open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        // Booking Modal
+        function showBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'visible';
+        }
+        
+        function submitBookingForm(e) {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<span class="flex items-center justify-center gap-x-2"><i class="fas fa-spinner fa-spin"></i> PROCESSING...</span>`;
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = `✓ BOOKING CONFIRMED`;
+                btn.style.backgroundColor = '#166534';
+                
+                setTimeout(() => {
+                    hideBookingModal();
+                    
+                    // Success toast
+                    showToast("Thank you! We've sent your calendar link to your email. Looking forward to speaking with you.");
+                    
+                    // Reset form
+                    e.target.reset();
+                    btn.innerHTML = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.disabled = false;
+                }, 1600);
+            }, 1450);
+        }
+        
+        function showPharmacyModal() {
+            const modal = document.getElementById('pharmacy-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hidePharmacyModal() {
+            const modal = document.getElementById('pharmacy-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'visible';
+        }
+        
+        function submitPharmacyForm(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = `SENDING...`;
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = `✓ SENT! CHECK YOUR EMAIL`;
+                btn.style.backgroundColor = '#166534';
+                
+                setTimeout(() => {
+                    hidePharmacyModal();
+                    showToast("Partnership kit sent! Our team will follow up within 24 hours.");
+                    e.target.reset();
+                    btn.innerHTML = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.disabled = false;
+                }, 1700);
+            }, 1350);
+        }
+        
+        function selectProgram(programName, price) {
+            const modal = document.getElementById('booking-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Pre-fill the program select
+            setTimeout(() => {
+                const select = document.getElementById('program-interest');
+                if (select) {
+                    select.value = programName;
+                }
+            }, 300);
+        }
+        
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-8 left-1/2 -translate-x-1/2 bg-zinc-900 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-x-3 z-[200]`;
+            toast.innerHTML = `
+                <i class="fas fa-check-circle text-emerald-400"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.transition = 'all 0.3s';
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 4200);
+        }
+        
+        // Keyboard escape for modals
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                const booking = document.getElementById('booking-modal');
+                const pharmacy = document.getElementById('pharmacy-modal');
+                
+                if (!booking.classList.contains('hidden') && booking.style.display !== 'none') {
+                    hideBookingModal();
+                } else if (!pharmacy.classList.contains('hidden') && pharmacy.style.display !== 'none') {
+                    hidePharmacyModal();
+                }
+            }
+            
+            if (e.key === "/" && document.activeElement.tagName === "BODY") {
+                e.preventDefault();
+                showBookingModal();
+            }
+        });
+        
+        // Initialize everything
+        function initializeWebsite() {
+            initializeTailwind();
+            
+            // Random stat animation on scroll into view (simple)
+            const stats = document.querySelectorAll('.metric-value');
+            if (stats.length) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            stats.forEach(stat => {
+                                const final = stat.textContent;
+                                stat.textContent = '0';
+                                let current = 0;
+                                const increment = parseInt(final) / 25;
+                                const timer = setInterval(() => {
+                                    current += increment;
+                                    if (current >= parseInt(final)) {
+                                        stat.textContent = final;
+                                        clearInterval(timer);
+                                    } else {
+                                        stat.textContent = Math.floor(current);
+                                    }
+                                }, 60);
+                            });
+                            observer.disconnect();
+                        }
+                    });
+                });
+                observer.observe(document.querySelector('#results'));
+            }
+            
+            // Easter egg: Konami code for "longevity mode"
+            let keys = [];
+            const konami = [38,38,40,40,37,39,37,39,66,65];
+            document.addEventListener('keydown', function(e) {
+                keys.push(e.keyCode);
+                if (keys.length > 10) keys.shift();
+                if (keys.join(',') === konami.join(',')) {
+                    document.body.style.transition = 'filter 1.2s';
+                    document.body.style.filter = 'hue-rotate(25deg) saturate(1.3)';
+                    setTimeout(() => {
+                        document.body.style.filter = '';
+                    }, 2400);
+                    keys = [];
+                }
+            });
+            
+            // Preload some images for better UX
+            console.log('%c[VitaTone] Mounjaro-specialized coaching website initialized successfully.', 'color:#166534; font-size:9px');
+        }
+        
+        // Boot the site
+        window.onload = initializeWebsite;
+        
+        // Make sure modals are hidden initially (redundant safety)
+        setTimeout(() => {
+            const modals = document.querySelectorAll('#booking-modal, #pharmacy-modal');
+            modals.forEach(m => m.style.display = 'none');
+        }, 100);
+    </script>
+</body>
+</html>
